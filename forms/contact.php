@@ -1,41 +1,46 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+  // Get form data
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $company = $_POST['company'];
+  $location = $_POST['location'];
+  $find_us = $_POST['find_us'];
+  $interest = $_POST['interest'];
+  $message = $_POST['message'];
+
+  // Validate input data
+  if (empty($name) || empty($email) || empty($phone) || empty($company) || empty($location) || empty($find_us) || empty($interest) || empty($message)) {
+    echo "Please fill in all the fields.";
+    exit();
   }
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+  // Format email message
+  $subject = "New message from $name";
+  $body = "Name: $name\n";
+  $body .= "Email: $email\n";
+  $body .= "Phone: $phone\n";
+  $body .= "Company: $company\n";
+  $body .= "Location: $location\n";
+  $body .= "How did you find us?: $find_us\n";
+  $body .= "Interested in: $interest\n";
+  $body .= "Message: $message\n";
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+  // Send email
+  $to = "tmthakkol@gmail.com"; // Replace with your own email address
+  $headers = "From: $name <$email>";
+  if (mail($to, $subject, $body, $headers)) {
+    echo "Your message has been sent. Thank you!";
+  } else {
+    echo "There was an error sending your message. Please try again later.";
+  }
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+} else {
+  echo "Invalid request method.";
+  exit();
+}
 
-  echo $contact->send();
 ?>
