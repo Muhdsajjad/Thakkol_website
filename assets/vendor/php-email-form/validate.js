@@ -73,12 +73,14 @@ $("#contact-form").submit((e) => {
 
   let thisForm = e.target
 
+  console.log($("#contact-form").serialize());
+
   $.ajax({
     url: $("#contact-form").attr('action'),
     crossDomain: true,
-    headers: {
-      'Access-Control-Allow-Origin': 'http://127.0.0.1:5500'
-    },
+    // headers: {
+    //   'Access-Control-Allow-Origin': 'http://127.0.0.1:5500'
+    // },
     data: $("#contact-form").serialize(),
     method: "POST",
     type: 'json',
