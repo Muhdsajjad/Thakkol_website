@@ -405,8 +405,8 @@ h6 {
 #hero {
   width: 100%;
   height: 60vh;
-  background: url("../img/website\ backround.png") center center;
-  background-size: cover;
+  background:#FF9933;
+  background-size: auto;
   position: relative;
   z-index: 1;
   padding: 0;
@@ -426,6 +426,14 @@ h6 {
 }
 
 
+#f-img{
+  transition: transform 0.3s ease-out;
+}
+
+#f-img:hover{
+  transform: scale(1.1);
+}
+
 
 #hero .container {
   z-index: 2;
@@ -437,13 +445,23 @@ h6 {
   font-weight: 700;
   line-height: 56px;
   color: #ffffff;
+  transition: transform 0.3s ease-out;
+  
 }
 
 #hero h2 {
   color: #ffffff;
   margin-bottom: 50px;
   font-size: 1.25rem;
+  transition: transform 0.3s ease-out;
 }
+
+
+  h1:hover, h2:hover {
+    
+    transform: translateX(3%)  scale(1.1);
+}
+
 
 #hero .get-started-icon {
   font-size: 24px;
@@ -478,21 +496,21 @@ h6 {
 
 @media (min-width: 1024px) {
   #hero {
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
 }
 
 @media (max-width: 1024px),
 (max-height: 768px) {
   #hero {
-    margin-bottom: -150px;
+    margin-bottom: -0;
     height: 80vh;
   }
 }
 
 @media (max-width: 768px) {
   #hero {
-    height: 80vh;
+    height: 120vh;
   }
 
   #hero h1 {
@@ -517,7 +535,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 120px 0;
+  padding: 10% 0;
   overflow: hidden;
 }
 
