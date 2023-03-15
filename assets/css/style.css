@@ -399,6 +399,64 @@ h6 {
   display: block;
 }
 
+
+a{
+  text-decoration:none;
+}
+.floating_btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  z-index: 1000;
+  font-weight: bold;
+}
+
+@keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+  }
+}
+
+.contact_icon {
+  background-color: #ff9933;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  font-size:30px;
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #ff9933;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translatey(0px);
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 0 0 #ff9933;
+  -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  font-weight: normal;
+  font-family: sans-serif;
+  text-decoration: none !important;
+  transition: all 300ms ease-in-out;
+}
+
+
+.text_icon {
+  margin-top: 8px;
+  color: #0b0b0b;
+  font-size: 13px;
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -409,7 +467,7 @@ h6 {
   background-size: auto;
   position: relative;
   z-index: 1;
-  padding: 0;
+  padding: 10%;
   margin-bottom: -0px;
   
   
@@ -438,6 +496,8 @@ h6 {
   left: 0;
   right: 0;
 }
+
+
 
 
 #f-img{
@@ -1301,7 +1361,7 @@ section {
 .facts .count-box i {
   display: block;
   font-size: 44px;
-  color: #149ddd;
+  color: #ff9933;
   float: left;
   line-height: 0;
 }
