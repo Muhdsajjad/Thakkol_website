@@ -599,17 +599,63 @@ a{
   }
 }
 
+
+
 @media (max-height: 640px) {
   #hero {
     height: 120vh;
   }
 }
+.line {
+    width: 100px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    top:50%;
+}
 
+#line_r{
+  -webkit-animation: line_r_animation 3s infinite;
+  animation: line_r_animation 3s infinite;
+}
+
+#line_l{
+  -webkit-animation: line_l_animation 3s infinite;
+  animation: line_l_animation 3s infinite;
+}
+
+@-webkit-keyframes line_l_animation {
+    0%   {left: calc(2% + 50px); width: 0px;}
+    35%   {left: calc(2% + 0px); width: 50px;}
+    70%   {left: calc(2% + 0px); width: 0px;}
+    100%   {left: calc(2% + 0px); width: 0px;}
+}
+
+@keyframes line_r_animation {
+    0%   {left: calc(2% + 50px); width: 0px;}
+    35%   {left: calc(2% + 0px); width: 50px;}
+    70%   {left: calc(2% + 0px); width: 0px;}
+    100%   {left: calc(2% + 0px); width: 0px;}
+}
+
+@-webkit-keyframes line_r_animation {
+    0%   {right: calc(2% + 50px); width: 0px;}
+    35%   {right: calc(2% + 0px); width: 50px;}
+    70%   {right: calc(2% + 0px); width: 0px;}
+    100%   {right: calc(2% + 0px); width: 0px;}
+}
+
+@keyframes line_r_animation {
+    0%   {right: calc(2% + 50px); width: 0px;}
+    35%   {right: calc(2% + 0px); width: 50px;}
+    70%   {right: calc(2% + 0px); width: 0px;}
+    100%   {right: calc(2% + 0px); width: 0px;}
+}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 10% 0;
+  padding: 5% 0;
   overflow: hidden;
 }
 
@@ -1180,6 +1226,9 @@ section {
   border-radius: 50px;
   padding: 2px 15px;
 }
+.portfolio {
+  padding-bottom: 0;
+}
 
 .portfolio #portfolio-flters li {
   cursor: pointer;
@@ -1218,7 +1267,7 @@ section {
   z-index: 3;
   transition: all ease-in-out 0.3s;
   background: rgba(255, 255, 255, 0.9);
-  padding: 15px;
+  padding: 0px;
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {
@@ -1350,11 +1399,12 @@ section {
 # Facts
 --------------------------------------------------------------*/
 .facts {
-  padding-bottom: 30px;
+  padding-bottom: 5%;
+  padding-top: 0%;
 }
 
 .facts .count-box {
-  padding: 30px;
+  padding: ;
   width: 100%;
 }
 
