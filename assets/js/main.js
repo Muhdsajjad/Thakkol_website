@@ -233,7 +233,7 @@
       strings: typed_strings,
       loop: true,
       typeSpeed: 50,
-      backSpeed: 50,
+      backSpeed: 25,
       backDelay: 2000
     });
   }
@@ -326,6 +326,8 @@
    */
     new PureCounter();
 
+
+    
     
 
   })()
