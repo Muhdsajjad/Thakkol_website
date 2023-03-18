@@ -531,10 +531,8 @@ a{
 }
 
 
-  h1:hover, h2:hover {
-    
-    transform: translateX(3%)  scale(1.1);
-}
+  
+
 
 
 #hero .get-started-icon {
@@ -1540,6 +1538,18 @@ section {
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.box:hover{
+    
+  transform: translateX(0%)  scale(1.05);
+}
+#pricing-2 {
+  margin-top: 5%;
+}
+.card-height {
+  height: 100%;
 }
 
 .pricing h3 {
@@ -1582,7 +1592,7 @@ section {
 }
 
 .pricing ul li {
-  padding-bottom: 16px;
+  padding-bottom: 5px;
 }
 
 .pricing ul i {
@@ -1597,10 +1607,18 @@ section {
 }
 
 .pricing .btn-wrap {
-  margin: 20px -20px -20px -20px;
-  padding: 20px 15px;
-  background: #f8f8f8;
+  margin: 10px -20px -0px -20px;
+  padding: 5px 15px;
+  
   text-align: center;
+}
+.btn-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  margin-bottom: -30;
 }
 
 .pricing .btn-buy {
@@ -1619,7 +1637,9 @@ section {
 }
 
 .pricing .btn-buy:hover {
-  background: #ff9933;
+  background: #fff;
+  color: #ff9933;
+  
 }
 
 .pricing .featured h3 {
@@ -1726,6 +1746,11 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+
+
+
+
+
 .contact .info-box {
   color: #313030;
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
