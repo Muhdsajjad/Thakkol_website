@@ -853,7 +853,7 @@ section {
 }
 
 .about .video-box {
-  background: url("../img/cover.png") center center no-repeat;
+  background: url("../img/cover.webp") center center no-repeat;
   background-size: cover;
   min-height: 500px;
 }
