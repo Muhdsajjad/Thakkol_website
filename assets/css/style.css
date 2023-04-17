@@ -502,6 +502,7 @@ a{
 
 #f-img{
   transition: transform 0.3s ease-out;
+  
 }
 
 #f-img:hover{
@@ -685,7 +686,7 @@ section {
 .breadcrumbs {
   padding: 15px 0;
   background: #f4f2f2;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
 .breadcrumbs h2 {
@@ -1889,7 +1890,7 @@ section {
 # Blog
 --------------------------------------------------------------*/
 .blog {
-  padding: 20px 0;
+  padding: 0px 0;
 }
 
 .blog .entry {
